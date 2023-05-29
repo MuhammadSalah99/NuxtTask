@@ -2,8 +2,9 @@
     <div>
         <NuxtPage />
         <div :class="{
-        'fixed   translate-y-full transition-transform duration-500 ease-in-out': isScrolled,
-        'transform bottom-0': !isScrolled}"
+            'fixed   translate-y-full transition-transform duration-500 ease-in-out': isScrolled,
+            'transform bottom-0': !isScrolled
+        }"
             class=" fixed flex justify-around items-start pt-3 bottom-0 left-0 right-0 m-auto rounded-[20px] w-11/12 h-16 bg-slate-800 transition-all duration-1000 ease-in-out">
             <svg class="w-6 h-6 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -30,8 +31,11 @@
                 </path>
             </svg>
         </div>
-        <div @click="slideUp" :class="{ 'color-on-scroll': isScrolled }"
-            class="w-[130px] rounded-lg  h-1 bg-white fixed bottom-3 m-auto  left-0 right-0"></div>
+        <div class="fixed bottom-0 h-9 w-full inline-block"  @click="slideUp" >
+            <div :class="{ 'color-on-scroll': isScrolled }"
+                class="w-[130px] rounded-lg  h-1 bg-white fixed bottom-3 m-auto  left-0 right-0"></div>
+
+        </div>
     </div>
 </template>
 
@@ -61,11 +65,8 @@ export default {
 
 </script>
 <style scoped>
-
-
 .color-on-scroll {
     @apply bg-slate-800 transition-transform duration-1000
 }
-
 </style>
 
